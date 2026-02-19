@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade Compounding Tracker</title>
+<!-- Favicon for browser tab -->
+<link rel="icon" type="image/png" href="https://img.freepik.com/premium-photo/forex-trading-chart-with-upward-trend-digital-globe-background-3d-rendering_670147-111991.jpg" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>Trade Compounding Tracker</h1></header>
+<div class="container">
+  <div class="tabs">
+    <button onclick="showTab('add')">Add Trade</button>
+    <button onclick="showTab('display')">Display Trades</button>
+    <button onclick="showTab('chart')">Chart</button>
+  </div>
+
+  <div id="add" class="tab active">
+    <h2>Add Trade</h2>
+    <form id="tradeForm">
+      <label>Date: <input type="date" id="date"></label>
+      <label>Capital ($): <input type="number" id="capital" value="1000"></label>
+      <label>Result %: <input type="number" id="result"></label>
+      <label>Notes: <input type="text" id="notes"></label>
+      <div style="flex-basis: 100%; text-align:center;">
+        <button type="button" class="add" onclick="buttonClickAnimation(this); addTrade()">Add Trade</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="display" class="tab">
+    <h2>Trades</h2>
+    <div style="text-align:center; margin-bottom:10px;">
+      <button class="export" onclick="buttonClickAnimation(this); exportJSON()">Export JSON</button>
+      <button class="clear" onclick="buttonClickAnimation(this); clearLocalStorage()">Clear Local Storage</button>
+      <input type="file" id="importFile" multiple onchange="importJSON(event)">
+    </div>
+    <table id="tradesTable">
+      <thead>
+        <tr>
+          <th>#</th><th>Date</th><th>Capital ($)</th><th>Result %</th><th>P&L ($)</th><th>New Capital ($)</th><th>Cumulative %</th><th>Notes</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="chart" class="tab">
+    <h2>Performance Chart</h2>
+    <canvas id="performanceChart"></canvas>
+  </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #1e1e2f;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #28293d;
+    color: #ffd700;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #2c2c3e;
+    border-radius: 10px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .tabs button {
+    background: #3e3f5e;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .tabs button:hover { background: #ffd700; color: #1e1e2f; }
+  .tabs button:active { transform: scale(0.95); }
+  .tab { display: none; }
+  .tab.active { display: block; }
+  form { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  form label { display: flex; flex-direction: column; margin: 5px; min-width: 150px; }
+  input, button { padding: 8px; border-radius: 5px; border: none; }
+  input[type="number"], input[type="text"], input[type="date"] { width: 100%; }
+  button.add, button.export, button.clear { background: #ffd700; color: #1e1e2f; font-weight: 600; margin-top: 10px; transition: transform 0.1s; }
+  button.add:hover, button.export:hover, button.clear:hover { background: #e6c200; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 10px; overflow: hidden; }
+  th, td { border: 1px solid #444; padding: 10px; text-align: center; }
+  th { background: #3e3f5e; }
+  tr:nth-child(even) { background: #2c2c3e; }
+  @media(max-width: 768px) { form { flex-direction: column; align-items: center; } table, th, td { font-size: 12px; } }
+  canvas { background: #2c2c3e; border-radius: 10px; padding: 10px; }
