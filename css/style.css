@@ -53,3 +53,45 @@
   tr:nth-child(even) { background: #2c2c3e; }
   @media(max-width: 768px) { form { flex-direction: column; align-items: center; } table, th, td { font-size: 12px; } }
   canvas { background: #2c2c3e; border-radius: 10px; padding: 10px; }
+
+  footer {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #28293d;
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-top: 20px;
+  border-top: 1px solid #3e3f5e;
+}
+
+footer a {
+  color: #ffd700;
+  text-decoration: none;
+  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+footer a:hover {
+  color: #e6c200;
+}
+
+.footer-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  footer {
+    font-size: 12px;
+  }
+  .footer-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+footer i {
+  margin-right: 5px;
+}
